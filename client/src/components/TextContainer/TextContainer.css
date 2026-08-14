@@ -1,32 +1,132 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
-  color: white;
-  height: 60%;
-  justify-content: space-between;
+  gap: 26px;
+  flex: 0 0 300px;
+  height: calc(100vh - 56px);
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-panel);
+  overflow-y: auto;
+}
+
+.sidebarHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebarTitle {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.sidebarBlurb {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.sidebarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.sidebarRoom {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--cyan);
+  word-break: break-word;
+}
+
+.sidebarPeople {
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .activeContainer {
   display: flex;
-  align-items: center;
-  margin-bottom: 50%;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
 }
 
 .activeItem {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.16s ease;
 }
 
-.activeContainer img {
-  padding-left: 10px;
+.activeItem:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.textContainer h1 {
-  margin-bottom: 0px;
+.activeAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 50%;
 }
 
-@media (min-width: 320px) and (max-width: 1200px) {
+.activeName {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 14px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activeDot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+
+.sidebarEmpty {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+
+.sidebarFooter {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+/* The sidebar duplicates what InfoBar already shows on narrow screens. */
+@media (max-width: 1100px) {
   .textContainer {
     display: none;
   }
