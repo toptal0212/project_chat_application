@@ -1,27 +1,70 @@
 .form {
   display: flex;
-  border-top: 2px solid #D3D3D3;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
 }
 
 .input {
-  border: none;
-  border-radius: 0;
-  padding: 5%;
-  width: 80%;
-  font-size: 1.2em;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 12px 18px;
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-input:focus, textarea:focus, select:focus{
-  outline: none;
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+.input:hover {
+  border-color: var(--border-strong);
+}
+
+.input:focus {
+  border-color: transparent;
+  box-shadow: var(--focus-ring);
 }
 
 .sendButton {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #2979FF;
-  padding: 20px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  color: #06080f;
+  background: var(--accent-gradient);
   border: none;
-  width: 20%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: filter 0.16s ease, transform 0.16s ease, opacity 0.16s ease;
+}
+
+.sendButton svg {
+  width: 17px;
+  height: 17px;
+}
+
+.sendButton:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.sendButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sendButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  filter: grayscale(0.5);
 }

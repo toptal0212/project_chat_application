@@ -1,45 +1,9 @@
-.messageBox {
-  background: #F3F3F3;
-  border-radius: 20px;
-  padding: 5px 20px;
-  color: white;
-  display: inline-block;
-  max-width: 80%;
-}
-
-.messageText {
-  width: 100%;
-  letter-spacing: 0;
-  float: left;
-  font-size: 1.1em;
-  word-wrap: break-word;
-}
-
-.messageText img {
-  vertical-align: middle;
-}
-
 .messageContainer {
   display: flex;
-  justify-content: flex-end;
-  padding: 0 5%;
-  margin-top: 3px;
-}
-
-.sentText {
-  display: flex;
-  align-items: center;
-  font-family: Helvetica;
-  color: #828282;
-  letter-spacing: 0.3px;
-}
-
-.pl-10 {
-  padding-left: 10px;
-}
-
-.pr-10 {
-  padding-right: 10px;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 0 20px;
+  margin-top: 14px;
 }
 
 .justifyStart {
@@ -50,18 +14,87 @@
   justify-content: flex-end;
 }
 
-.colorWhite {
-  color: white;
+.messageStack {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 78%;
+  min-width: 0;
 }
 
-.colorDark {
-  color: #353535;
+.justifyEnd .messageStack {
+  align-items: flex-end;
 }
 
-.backgroundBlue {
-  background: #2979FF;
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cyan);
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 50%;
 }
 
-.backgroundLight {
-  background: #F3F3F3;
+.sentText {
+  padding: 0 4px;
+  color: var(--text-dim);
+}
+
+.messageBox {
+  padding: 10px 15px;
+  border-radius: var(--radius);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.peerMessage {
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 5px;
+  color: var(--text);
+}
+
+.ownMessage {
+  background: var(--accent-gradient);
+  border-bottom-right-radius: 5px;
+  color: #06080f;
+}
+
+.messageText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.messageText img {
+  vertical-align: middle;
+}
+
+/* System notices ("X has joined") sit centred, quieter than real messages. */
+.systemMessage {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 16px;
+}
+
+.systemMessageText {
+  padding: 5px 14px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.systemMessageText img {
+  vertical-align: middle;
 }

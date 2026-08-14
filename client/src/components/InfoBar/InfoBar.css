@@ -2,27 +2,88 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2979FF;
-  border-radius: 4px 4px 0 0;
-  height: 60px;
-  width: 100%;
+  gap: 16px;
+  flex: 0 0 auto;
+  padding: 14px 20px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
 }
 
 .leftInnerContainer {
-  flex: 0.5;
   display: flex;
   align-items: center;
-  margin-left: 5%;
-  color: white;
+  gap: 12px;
+  min-width: 0;
+}
+
+.onlineDot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+}
+
+.roomMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.roomTag {
+  line-height: 1.2;
+}
+
+.roomName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rightInnerContainer {
   display: flex;
-  flex: 0.5;
-  justify-content: flex-end;
-  margin-right: 5%;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
 }
 
-.onlineIcon {
-  margin-right: 5%;
+.memberCount {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.leaveButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: color 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.leaveButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+.leaveButton:hover {
+  color: var(--magenta);
+  border-color: rgba(236, 72, 153, 0.4);
+  background: rgba(236, 72, 153, 0.08);
+}
+
+@media (max-width: 480px) {
+  .memberCount {
+    display: none;
+  }
 }
